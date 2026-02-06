@@ -9,318 +9,248 @@
 
 <!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-    scroll-behavior:smooth;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
-    background:#fafafa;
-    color:#333;
+background:#fafafa;
+color:#333;
 }
 
 /* HEADER */
 header{
-    background:linear-gradient(-45deg,#d62828,#ff7b00,#d62828,#a4161a);
-    background-size:400% 400%;
-    animation:gradientMove 8s infinite;
-    color:white;
-    text-align:center;
-    padding:50px 20px;
+background:linear-gradient(-45deg,#d62828,#ff7b00,#d62828,#a4161a);
+background-size:400% 400%;
+animation:gradientMove 8s infinite;
+color:white;
+text-align:center;
+padding:50px 20px;
 }
 
 @keyframes gradientMove{
-    0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
 }
 
 header h1{
-    font-size:34px;
-    letter-spacing:1px;
+font-size:34px;
+letter-spacing:1px;
 }
 
 header p{
-    margin-top:10px;
-    font-size:18px;
-}
-/* NAVBAR */
-nav{
-    background:#111;
-    position:sticky;
-    top:0;
-    z-index:1000;
-}
-
-.nav-bar{
-    max-width:1100px;
-    margin:auto;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:14px 20px;
-}
-
-.logo{
-    color:white;
-    font-weight:600;
-    font-size:18px;
-}
-
-.nav-links a{
-    color:white;
-    text-decoration:none;
-    margin-left:20px;
-    font-size:15px;
-}
-
-.nav-links a:hover{
-    color:#ffd60a;
-}
-
-.menu-toggle{
-    color:white;
-    font-size:26px;
-    cursor:pointer;
-    display:none;
-}
-
-/* MOBILE */
-@media(max-width:768px){
-
-  .menu-toggle{
-    display:block;
-  }
-
-  .nav-links{
-    position:absolute;
-    background:#111;
-    top:60px;
-    left:0;
-    width:100%;
-    display:none;
-    flex-direction:column;
-    text-align:center;
-  }
-
-  .nav-links a{
-    padding:14px;
-    border-top:1px solid #222;
-    margin:0;
-  }
-
-  .nav-links.show{
-    display:flex;
-  }
-
+margin-top:10px;
+font-size:18px;
 }
 
 /* NAV */
 nav{
-    background:#111;
-    text-align:center;
-    padding:14px;
-    position:sticky;
-    top:0;
-    z-index:1000;
+background:#111;
+text-align:center;
+padding:14px;
+position:sticky;
+top:0;
+z-index:1000;
 }
 
 nav a{
-    color:white;
-    text-decoration:none;
-    margin:0 18px;
-    font-size:16px;
-    position:relative;
+color:white;
+text-decoration:none;
+margin:0 18px;
+font-size:16px;
+position:relative;
 }
 
 nav a::after{
-    content:"";
-    width:0;
-    height:2px;
-    background:#ffd60a;
-    position:absolute;
-    left:0;
-    bottom:-6px;
-    transition:.3s;
+content:"";
+width:0;
+height:2px;
+background:#ffd60a;
+position:absolute;
+left:0;
+bottom:-6px;
+transition:.3s;
 }
 
 nav a:hover::after{
-    width:100%;
+width:100%;
 }
 
 /* SECTIONS */
 section{
-    padding:70px 20px;
+padding:70px 20px;
 }
 
 .container{
-    max-width:1100px;
-    margin:auto;
+max-width:1100px;
+margin:auto;
 }
 
 /* HERO */
 .hero{
-    text-align:center;
-    background:white;
-    border-radius:16px;
-    padding:40px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.1);
-    animation:fadeUp 1s ease;
+text-align:center;
+background:white;
+border-radius:16px;
+padding:40px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+animation:fadeUp 1s ease;
 }
 
 @keyframes fadeUp{
-    from{opacity:0; transform:translateY(40px);}
-    to{opacity:1; transform:translateY(0);}
+from{opacity:0; transform:translateY(40px);}
+to{opacity:1; transform:translateY(0);}
 }
 
 .hero h2{
-    color:#a4161a;
-    margin-bottom:10px;
+color:#a4161a;
+margin-bottom:10px;
 }
 
 /* BUTTON */
 .btn{
-    display:inline-block;
-    margin-top:20px;
-    background:#d62828;
-    color:white;
-    padding:14px 26px;
-    border-radius:10px;
-    text-decoration:none;
-    font-weight:bold;
-    transition:.3s;
-    box-shadow:0 0 0 rgba(214,40,40,0.7);
+display:inline-block;
+margin-top:20px;
+background:#d62828;
+color:white;
+padding:14px 26px;
+border-radius:10px;
+text-decoration:none;
+font-weight:bold;
+transition:.3s;
+box-shadow:0 0 0 rgba(214,40,40,0.7);
 }
 
 .btn:hover{
-    transform:translateY(-3px);
-    box-shadow:0 10px 25px rgba(214,40,40,0.4);
+transform:translateY(-3px);
+box-shadow:0 10px 25px rgba(214,40,40,0.4);
 }
 
 /* GRID */
 .grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:24px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:24px;
 }
 
 /* CARD */
 .card{
-    background:white;
-    padding:28px;
-    border-radius:16px;
-    box-shadow:0 8px 25px rgba(0,0,0,0.08);
-    transition:.4s;
-    opacity:0;
-    transform:translateY(40px);
+background:white;
+padding:28px;
+border-radius:16px;
+box-shadow:0 8px 25px rgba(0,0,0,0.08);
+transition:.4s;
+opacity:0;
+transform:translateY(40px);
 }
 
 .card.show{
-    opacity:1;
-    transform:translateY(0);
+opacity:1;
+transform:translateY(0);
 }
 
 .card:hover{
-    transform:translateY(-8px) scale(1.02);
+transform:translateY(-8px) scale(1.02);
 }
 
 .card h3{
-    color:#d62828;
-    margin-bottom:10px;
+color:#d62828;
+margin-bottom:10px;
 }
 
 /* LIST */
 ul{
-    margin-left:20px;
-    line-height:2;
+margin-left:20px;
+line-height:2;
 }
 
 /* GALLERY */
 .gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:18px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:18px;
 }
 
 .gallery img{
-    width:100%;
-    height:210px;
-    object-fit:cover;
-    border-radius:14px;
-    transition:.4s;
-    box-shadow:0 6px 18px rgba(0,0,0,0.15);
+width:100%;
+height:210px;
+object-fit:cover;
+border-radius:14px;
+transition:.4s;
+box-shadow:0 6px 18px rgba(0,0,0,0.15);
 }
 
 .gallery img:hover{
-    transform:scale(1.08);
+transform:scale(1.08);
 }
 
 /* FORM */
 form{
-    display:grid;
-    gap:14px;
+display:grid;
+gap:14px;
 }
 
 input,textarea{
-    padding:14px;
-    border-radius:10px;
-    border:1px solid #ccc;
-    transition:.3s;
+padding:14px;
+border-radius:10px;
+border:1px solid #ccc;
+transition:.3s;
 }
 
 input:focus, textarea:focus{
-    border-color:#d62828;
-    outline:none;
-    box-shadow:0 0 8px rgba(214,40,40,0.3);
+border-color:#d62828;
+outline:none;
+box-shadow:0 0 8px rgba(214,40,40,0.3);
 }
 
 iframe{
-    width:100%;
-    height:300px;
-    border-radius:14px;
-    border:0;
+width:100%;
+height:300px;
+border-radius:14px;
+border:0;
 }
 
 /* FOOTER */
 footer{
-    background:#111;
-    color:white;
-    text-align:center;
-    padding:30px;
+background:#111;
+color:white;
+text-align:center;
+padding:30px;
 }
 
 /* WHATSAPP FLOAT */
 .whatsapp{
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    background:#25D366;
-    color:white;
-    padding:16px 18px;
-    border-radius:50%;
-    text-decoration:none;
-    font-size:24px;
-    box-shadow:0 4px 12px rgba(0,0,0,0.3);
-    transition:.3s;
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:16px 18px;
+border-radius:50%;
+text-decoration:none;
+font-size:24px;
+box-shadow:0 4px 12px rgba(0,0,0,0.3);
+transition:.3s;
 }
 
 .whatsapp:hover{
-    transform:scale(1.1);
+transform:scale(1.1);
 }
 
 
 @keyframes pulse{
-    0%{box-shadow:0 0 0 0 rgba(37,211,102,0.6);}
-    70%{box-shadow:0 0 0 15px rgba(37,211,102,0);}
-    100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}
+0%{box-shadow:0 0 0 0 rgba(37,211,102,0.6);}
+70%{box-shadow:0 0 0 15px rgba(37,211,102,0);}
+100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}
 }
 
 </style>
@@ -331,30 +261,22 @@ footer{
 <header>
 <h1>SRI SURYADURGA GENERAL STORES</h1>
 <p>All Fancy & General Items Available</p>
+     <div class="header-right">
+        📞 +91 99853 85382<br>
+        📞 +91 99635 66838
      <p align="right"> 📞 +91 99853 85382 </p>
      <p align="right"> 📞 +91 99635 66838</p>
-    </div>
+</div>
 
 </header>
 
 <nav>
-  <div class="nav-bar">
-    <div class="logo">Suryadurga Stores</div>
-
-    <div class="menu-toggle" onclick="toggleMenu()">
-      ☰
-    </div>
-
-    <div class="nav-links" id="navLinks">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#products">Products</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </div>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#products">Products</a>
+<a href="#gallery">Gallery</a>
+<a href="#contact">Contact</a>
 </nav>
-
 
 <section id="home">
 <div class="container hero">
@@ -444,19 +366,13 @@ Call Now
 /* scroll reveal animation */
 const cards = document.querySelectorAll('.card');
 window.addEventListener('scroll', () => {
-  cards.forEach(card => {
-    const top = card.getBoundingClientRect().top;
-    if(top < window.innerHeight - 80){
-        card.classList.add('show');
-    }
-  });
+cards.forEach(card => {
+const top = card.getBoundingClientRect().top;
+if(top < window.innerHeight - 80){
+card.classList.add('show');
+}
 });
-  
-function toggleMenu(){
-  document.getElementById("navLinks").classList.toggle("show");
-
-</script>
-
+});
 </script>
 
 </body>
