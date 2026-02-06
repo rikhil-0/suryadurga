@@ -1,205 +1,300 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Sri Suryadurga General Stores</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Sri Suryadurga General Stores</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
-        body {
-            background: linear-gradient(135deg, #ffecd2, #fcb69f);
-            color: #333;
-        }
+body{
+    background:#f6f6f6;
+    color:#333;
+}
 
-        header {
-            background: #b31217;
-            background: linear-gradient(to right, #e52d27, #b31217);
-            color: white;
-            padding: 30px 20px;
-            text-align: center;
-        }
+/* HEADER */
+header{
+    background:linear-gradient(90deg,#d62828,#a4161a);
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+}
 
-        header h1 {
-            font-size: 36px;
-            letter-spacing: 1px;
-        }
+header h1{
+    font-size:34px;
+    letter-spacing:1px;
+}
 
-        header p {
-            margin-top: 10px;
-            font-size: 18px;
-        }
+header p{
+    margin-top:10px;
+    font-size:18px;
+}
 
-        nav {
-            background: #222;
-            text-align: center;
-            padding: 12px;
-        }
+/* NAV */
+nav{
+    background:#111;
+    text-align:center;
+    padding:14px;
+    position:sticky;
+    top:0;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 20px;
-            font-size: 16px;
-        }
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 18px;
+    font-size:16px;
+}
 
-        nav a:hover {
-            color: #ffd700;
-        }
+nav a:hover{
+    color:#ffd60a;
+}
 
-        .hero {
-            padding: 60px 20px;
-            text-align: center;
-            background: white;
-        }
+/* SECTIONS */
+section{
+    padding:60px 20px;
+}
 
-        .hero h2 {
-            font-size: 28px;
-            color: #b31217;
-            margin-bottom: 15px;
-        }
+.container{
+    max-width:1100px;
+    margin:auto;
+}
 
-        .hero p {
-            font-size: 18px;
-        }
+/* HERO */
+.hero{
+    background:white;
+    text-align:center;
+    border-radius:14px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
 
-        .container {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 20px;
-        }
+.hero h2{
+    color:#a4161a;
+    margin-bottom:10px;
+}
 
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    background:#d62828;
+    color:white;
+    padding:12px 22px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
+}
 
-        .card {
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 6px 14px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
+.btn:hover{
+    background:#a4161a;
+}
 
-        .card:hover {
-            transform: translateY(-6px);
-        }
+/* CARDS */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:22px;
+}
 
-        .card h3 {
-            color: #e52d27;
-            margin-bottom: 10px;
-        }
+.card{
+    background:white;
+    padding:25px;
+    border-radius:14px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
 
-        .highlight {
-            background: #fff3cd;
-            border-left: 6px solid #ff9800;
-        }
+.card h3{
+    color:#d62828;
+    margin-bottom:10px;
+}
 
-        footer {
-            background: #111;
-            color: white;
-            text-align: center;
-            padding: 25px;
-            margin-top: 40px;
-        }
+/* LIST */
+ul{
+    margin-left:20px;
+    line-height:1.9;
+}
 
-        footer p {
-            margin: 6px 0;
-        }
+/* GALLERY */
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+}
 
-        .btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 22px;
-            background: #e52d27;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-        }
+.gallery img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+    border-radius:12px;
+}
 
-        .btn:hover {
-            background: #b31217;
-        }
-    </style>
+/* CONTACT */
+form{
+    display:grid;
+    gap:12px;
+}
+
+input,textarea{
+    padding:12px;
+    border-radius:8px;
+    border:1px solid #ccc;
+}
+
+iframe{
+    width:100%;
+    height:300px;
+    border-radius:12px;
+    border:0;
+}
+
+/* FOOTER */
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+/* WHATSAPP BUTTON */
+.whatsapp{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    color:white;
+    padding:14px 18px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:bold;
+    box-shadow:0 4px 10px rgba(0,0,0,0.3);
+}
+</style>
 </head>
 
 <body>
 
 <header>
-    <h1>SRI SURYADURGA GENERAL STORES</h1>
-    <p>All Fancy Items Available</p>
+<h1>SRI SURYADURGA GENERAL STORES</h1>
+<p>All Fancy & General Items Available</p>
 </header>
 
 <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#products">Products</a>
-    <a href="#contact">Contact</a>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#products">Products</a>
+<a href="#gallery">Gallery</a>
+<a href="#contact">Contact</a>
 </nav>
 
-<section class="hero" id="home">
-    <h2>Your One‑Stop Fancy & General Store</h2>
-    <p>Quality products • Best prices • Friendly service</p>
-    <a href="#contact" class="btn">Visit Our Store</a>
+<section id="home">
+<div class="container hero">
+<h2>Your One-Stop Fancy Store</h2>
+<p>Quality • Variety • Affordable Prices • Friendly Service</p>
+<a href="#contact" class="btn">Visit Our Shop</a>
+</div>
 </section>
 
-<div class="container" id="about">
-    <div class="card-grid">
-        <div class="card">
-            <h3>Shop Name</h3>
-            <p>Sri Suryadurga General Stores is your trusted neighborhood shop for all daily and fancy needs.</p>
-        </div>
+<section id="about">
+<div class="container grid">
 
-        <div class="card highlight">
-            <h3>Owners</h3>
-            <p>Bangarraju<br>Venu Gopal</p>
-        </div>
-
-        <div class="card">
-            <h3>Speciality</h3>
-            <p>All fancy items available including gift items, decorations, small accessories and daily essentials.</p>
-        </div>
-    </div>
+<div class="card">
+<h3>About Us</h3>
+<p>
+Sri Suryadurga General Stores is a trusted neighborhood shop providing
+fancy items, gifts, decorations, stationery and daily essentials.
+Customer satisfaction is our priority.
+</p>
 </div>
 
-<div class="container" id="products">
-    <div class="card">
-        <h3>Available Items</h3>
-        <ul style="line-height: 1.8; margin-left:20px;">
-            <li>Fancy items</li>
-            <li>Gift materials</li>
-            <li>Household goods</li>
-            <li>Stationery</li>
-            <li>Festival decorations</li>
-            <li>General daily needs</li>
-        </ul>
-    </div>
+<div class="card">
+<h3>Owners</h3>
+<p>
+Bangarraju<br>
+Venu Gopal
+</p>
 </div>
 
-<div class="container" id="contact">
-    <div class="card">
-        <h3>Contact & Address</h3>
-        <p><strong>Address:</strong><br>
-        Palakonda Road,<br>
-        Ungaradametta</p>
-
-        <p style="margin-top:15px;">Visit us for the best quality and price!</p>
-    </div>
+<div class="card">
+<h3>Why Choose Us</h3>
+<ul>
+<li>Wide variety of items</li>
+<li>Best prices</li>
+<li>Festival collections</li>
+<li>Friendly support</li>
+</ul>
 </div>
+
+</div>
+</section>
+
+<section id="products">
+<div class="container">
+<div class="card">
+<h3>Available Products</h3>
+<ul>
+<li>Fancy Items</li>
+<li>Gift Articles</li>
+<li>Decoration Materials</li>
+<li>Stationery</li>
+<li>Household Goods</li>
+<li>Festival Supplies</li>
+<li>Daily Essentials</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section id="gallery">
+<div class="container">
+<h3 style="margin-bottom:20px;color:#a4161a;">Shop Gallery</h3>
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1607083206968-13611e3d76db">
+<img src="https://images.unsplash.com/photo-1607082350899-7e105aa886ae">
+<img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da">
+<img src="https://images.unsplash.com/photo-1607082349566-187342175e2f">
+</div>
+</div>
+</section>
+
+<section id="contact">
+<div class="container grid">
+
+<div class="card">
+<h3>Address</h3>
+<p>
+Palakonda Road,<br>
+Ungaradametta
+</p>
+
+<iframe src="https://maps.google.com/maps?q=Palakonda%20Road&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+</div>
+
+<div class="card">
+<h3>Contact Us</h3>
+<form onsubmit="event.preventDefault(); alert('Thank you! We will contact you soon.');">
+<input type="text" placeholder="Your Name" required>
+<input type="tel" placeholder="Phone Number" required>
+<textarea rows="4" placeholder="Message"></textarea>
+<button class="btn">Send Message</button>
+</form>
+</div>
+
+</div>
+</section>
 
 <footer>
-    <p>© 2026 Sri Suryadurga General Stores</p>
-    <p>Serving customers with trust and quality</p>
+<p>© 2026 Sri Suryadurga General Stores</p>
+<p>Serving customers with trust & quality</p>
 </footer>
+
+<a class="whatsapp" href="https://wa.me/91XXXXXXXXXX" target="_blank">
+WhatsApp
+</a>
 
 </body>
 </html>
