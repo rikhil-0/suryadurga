@@ -52,6 +52,76 @@ header p{
     margin-top:10px;
     font-size:18px;
 }
+/* NAVBAR */
+nav{
+    background:#111;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.nav-bar{
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:14px 20px;
+}
+
+.logo{
+    color:white;
+    font-weight:600;
+    font-size:18px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-size:15px;
+}
+
+.nav-links a:hover{
+    color:#ffd60a;
+}
+
+.menu-toggle{
+    color:white;
+    font-size:26px;
+    cursor:pointer;
+    display:none;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+  .menu-toggle{
+    display:block;
+  }
+
+  .nav-links{
+    position:absolute;
+    background:#111;
+    top:60px;
+    left:0;
+    width:100%;
+    display:none;
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .nav-links a{
+    padding:14px;
+    border-top:1px solid #222;
+    margin:0;
+  }
+
+  .nav-links.show{
+    display:flex;
+  }
+
+}
 
 /* NAV */
 nav{
@@ -268,12 +338,23 @@ footer{
 </header>
 
 <nav>
-<a href="#home">Home</a>
-<a href="#about">About</a>
-<a href="#products">Products</a>
-<a href="#gallery">Gallery</a>
-<a href="#contact">Contact</a>
+  <div class="nav-bar">
+    <div class="logo">Suryadurga Stores</div>
+
+    <div class="menu-toggle" onclick="toggleMenu()">
+      ☰
+    </div>
+
+    <div class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
 </nav>
+
 
 <section id="home">
 <div class="container hero">
@@ -370,6 +451,12 @@ window.addEventListener('scroll', () => {
     }
   });
 });
+  
+function toggleMenu(){
+  document.getElementById("navLinks").classList.toggle("show");
+
+</script>
+
 </script>
 
 </body>
