@@ -5,25 +5,38 @@
 <title>Sri Suryadurga General Stores</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
 <style>
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
 }
 
 body{
-    background:#f6f6f6;
+    background:#fafafa;
     color:#333;
 }
 
 /* HEADER */
 header{
-    background:linear-gradient(90deg,#d62828,#a4161a);
+    background:linear-gradient(-45deg,#d62828,#ff7b00,#d62828,#a4161a);
+    background-size:400% 400%;
+    animation:gradientMove 8s infinite;
     color:white;
     text-align:center;
-    padding:40px 20px;
+    padding:50px 20px;
+}
+
+@keyframes gradientMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
 }
 
 header h1{
@@ -43,6 +56,7 @@ nav{
     padding:14px;
     position:sticky;
     top:0;
+    z-index:1000;
 }
 
 nav a{
@@ -50,15 +64,27 @@ nav a{
     text-decoration:none;
     margin:0 18px;
     font-size:16px;
+    position:relative;
 }
 
-nav a:hover{
-    color:#ffd60a;
+nav a::after{
+    content:"";
+    width:0;
+    height:2px;
+    background:#ffd60a;
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    transition:.3s;
+}
+
+nav a:hover::after{
+    width:100%;
 }
 
 /* SECTIONS */
 section{
-    padding:60px 20px;
+    padding:70px 20px;
 }
 
 .container{
@@ -68,10 +94,17 @@ section{
 
 /* HERO */
 .hero{
-    background:white;
     text-align:center;
-    border-radius:14px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    background:white;
+    border-radius:16px;
+    padding:40px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.1);
+    animation:fadeUp 1s ease;
+}
+
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(40px);}
+    to{opacity:1; transform:translateY(0);}
 }
 
 .hero h2{
@@ -79,33 +112,50 @@ section{
     margin-bottom:10px;
 }
 
+/* BUTTON */
 .btn{
     display:inline-block;
     margin-top:20px;
     background:#d62828;
     color:white;
-    padding:12px 22px;
-    border-radius:8px;
+    padding:14px 26px;
+    border-radius:10px;
     text-decoration:none;
     font-weight:bold;
+    transition:.3s;
+    box-shadow:0 0 0 rgba(214,40,40,0.7);
 }
 
 .btn:hover{
-    background:#a4161a;
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(214,40,40,0.4);
 }
 
-/* CARDS */
+/* GRID */
 .grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:22px;
+    gap:24px;
 }
 
+/* CARD */
 .card{
     background:white;
-    padding:25px;
-    border-radius:14px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    padding:28px;
+    border-radius:16px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+    transition:.4s;
+    opacity:0;
+    transform:translateY(40px);
+}
+
+.card.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.card:hover{
+    transform:translateY(-8px) scale(1.02);
 }
 
 .card h3{
@@ -116,39 +166,52 @@ section{
 /* LIST */
 ul{
     margin-left:20px;
-    line-height:1.9;
+    line-height:2;
 }
 
 /* GALLERY */
 .gallery{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:15px;
+    gap:18px;
 }
 
 .gallery img{
     width:100%;
-    height:200px;
+    height:210px;
     object-fit:cover;
-    border-radius:12px;
+    border-radius:14px;
+    transition:.4s;
+    box-shadow:0 6px 18px rgba(0,0,0,0.15);
 }
 
-/* CONTACT */
+.gallery img:hover{
+    transform:scale(1.08);
+}
+
+/* FORM */
 form{
     display:grid;
-    gap:12px;
+    gap:14px;
 }
 
 input,textarea{
-    padding:12px;
-    border-radius:8px;
+    padding:14px;
+    border-radius:10px;
     border:1px solid #ccc;
+    transition:.3s;
+}
+
+input:focus, textarea:focus{
+    border-color:#d62828;
+    outline:none;
+    box-shadow:0 0 8px rgba(214,40,40,0.3);
 }
 
 iframe{
     width:100%;
     height:300px;
-    border-radius:12px;
+    border-radius:14px;
     border:0;
 }
 
@@ -157,22 +220,29 @@ footer{
     background:#111;
     color:white;
     text-align:center;
-    padding:25px;
+    padding:30px;
 }
 
-/* WHATSAPP BUTTON */
+/* WHATSAPP FLOAT */
 .whatsapp{
     position:fixed;
     bottom:20px;
     right:20px;
     background:#25D366;
     color:white;
-    padding:14px 18px;
+    padding:15px 20px;
     border-radius:50px;
     text-decoration:none;
     font-weight:bold;
-    box-shadow:0 4px 10px rgba(0,0,0,0.3);
+    animation:pulse 2s infinite;
 }
+
+@keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(37,211,102,0.6);}
+    70%{box-shadow:0 0 0 15px rgba(37,211,102,0);}
+    100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}
+}
+
 </style>
 </head>
 
@@ -194,55 +264,36 @@ footer{
 <section id="home">
 <div class="container hero">
 <h2>Your One-Stop Fancy Store</h2>
-<p>Quality • Variety • Affordable Prices • Friendly Service</p>
+<p>Quality • Variety • Best Prices</p>
 <a href="#contact" class="btn">Visit Our Shop</a>
 </div>
 </section>
 
 <section id="about">
 <div class="container grid">
-
-<div class="card">
-<h3>About Us</h3>
-<p>
-Sri Suryadurga General Stores is a trusted neighborhood shop providing
-fancy items, gifts, decorations, stationery and daily essentials.
-Customer satisfaction is our priority.
-</p>
+<div class="card"><h3>About Us</h3>
+Sri Suryadurga General Stores — trusted local shop for fancy items, gifts, and essentials.
 </div>
 
-<div class="card">
-<h3>Owners</h3>
-<p>
-Bangarraju<br>
-Venu Gopal
-</p>
+<div class="card"><h3>Owners</h3>
+Bangarraju<br>Venu Gopal
 </div>
 
-<div class="card">
-<h3>Why Choose Us</h3>
-<ul>
-<li>Wide variety of items</li>
-<li>Best prices</li>
-<li>Festival collections</li>
-<li>Friendly support</li>
-</ul>
+<div class="card"><h3>Special</h3>
+All fancy items available for festivals and daily needs.
 </div>
-
 </div>
 </section>
 
 <section id="products">
-<div class="container">
+<div class="container grid">
 <div class="card">
-<h3>Available Products</h3>
+<h3>Products</h3>
 <ul>
 <li>Fancy Items</li>
 <li>Gift Articles</li>
-<li>Decoration Materials</li>
+<li>Decorations</li>
 <li>Stationery</li>
-<li>Household Goods</li>
-<li>Festival Supplies</li>
 <li>Daily Essentials</li>
 </ul>
 </div>
@@ -250,51 +301,52 @@ Venu Gopal
 </section>
 
 <section id="gallery">
-<div class="container">
-<h3 style="margin-bottom:20px;color:#a4161a;">Shop Gallery</h3>
-<div class="gallery">
+<div class="container gallery">
 <img src="https://images.unsplash.com/photo-1607083206968-13611e3d76db">
 <img src="https://images.unsplash.com/photo-1607082350899-7e105aa886ae">
 <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da">
 <img src="https://images.unsplash.com/photo-1607082349566-187342175e2f">
 </div>
-</div>
 </section>
 
 <section id="contact">
 <div class="container grid">
-
 <div class="card">
 <h3>Address</h3>
-<p>
-Palakonda Road,<br>
-Ungaradametta
-</p>
-
-<iframe src="https://maps.google.com/maps?q=Palakonda%20Road&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+Palakonda Road, Ungaradametta
+<iframe src="https://maps.google.com/maps?q=Palakonda%20Road&output=embed"></iframe>
 </div>
 
 <div class="card">
-<h3>Contact Us</h3>
-<form onsubmit="event.preventDefault(); alert('Thank you! We will contact you soon.');">
-<input type="text" placeholder="Your Name" required>
-<input type="tel" placeholder="Phone Number" required>
-<textarea rows="4" placeholder="Message"></textarea>
-<button class="btn">Send Message</button>
+<h3>Contact</h3>
+<form onsubmit="event.preventDefault();alert('Message Sent!');">
+<input placeholder="Name" required>
+<input placeholder="Phone" required>
+<textarea placeholder="Message"></textarea>
+<button class="btn">Send</button>
 </form>
 </div>
-
 </div>
 </section>
 
 <footer>
-<p>© 2026 Sri Suryadurga General Stores</p>
-<p>Serving customers with trust & quality</p>
+© 2026 Sri Suryadurga General Stores
 </footer>
 
-<a class="whatsapp" href="https://wa.me/91XXXXXXXXXX" target="_blank">
-WhatsApp
-</a>
+<a class="whatsapp" href="https://wa.me/91XXXXXXXXXX">WhatsApp</a>
+
+<script>
+/* scroll reveal animation */
+const cards = document.querySelectorAll('.card');
+window.addEventListener('scroll', () => {
+  cards.forEach(card => {
+    const top = card.getBoundingClientRect().top;
+    if(top < window.innerHeight - 80){
+        card.classList.add('show');
+    }
+  });
+});
+</script>
 
 </body>
 </html>
