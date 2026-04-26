@@ -5,267 +5,101 @@
 <title>Sri Suryadurga General Stores</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-scroll-behavior:smooth;
-}
-
-body{
-background:#fafafa;
-color:#333;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
+body{background:#f5f5f5;color:#333}
 
 /* HEADER */
 header{
-background:linear-gradient(-45deg,#d62828,#ff7b00,#d62828,#a4161a);
-background-size:400% 400%;
-animation:gradientMove 8s infinite;
-color:white;
-text-align:center;
-padding:50px 20px;
-position:relative;
+background:linear-gradient(135deg,#d62828,#f77f00);
+color:white;text-align:center;padding:40px 20px;
 }
 
-@keyframes gradientMove{
-0%{background-position:0% 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0% 50%;}
-}
-
-header h1{
-font-size:32px;
-}
-
-.header-right{
-position:absolute;
-top:15px;
-right:20px;
-text-align:right;
-font-size:14px;
-line-height:1.6;
-}
-
-/* NAVBAR */
+/* NAV */
 nav{
 background:#111;
-position:sticky;
-top:0;
-z-index:1000;
+text-align:center;
+padding:12px;
+position:sticky;top:0;
+}
+nav a{
+color:white;margin:0 15px;text-decoration:none;
 }
 
-.nav-container{
-max-width:1100px;
-margin:auto;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:14px;
-}
+/* SECTION */
+section{padding:40px 20px}
+.container{max-width:1100px;margin:auto}
 
-.logo{
-color:white;
-font-weight:bold;
-}
-
-.menu{
-display:flex;
+/* PRODUCTS */
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:20px;
 }
 
-.menu a{
+.product{
+background:white;
+border-radius:12px;
+padding:20px;
+box-shadow:0 6px 16px rgba(0,0,0,0.1);
+text-align:center;
+}
+
+.product h3{margin-bottom:10px}
+
+.qty{
+width:60px;
+padding:6px;
+margin:10px 0;
+}
+
+.btn{
+background:#d62828;
 color:white;
-text-decoration:none;
-font-size:15px;
-position:relative;
-}
-
-.menu a::after{
-content:"";
-width:0;
-height:2px;
-background:#ffd60a;
-position:absolute;
-left:0;
-bottom:-6px;
-transition:.3s;
-}
-
-.menu a:hover::after{
-width:100%;
-}
-
-/* HAMBURGER */
-.hamburger{
-display:none;
-font-size:22px;
-color:white;
+padding:10px 16px;
+border:none;
+border-radius:8px;
 cursor:pointer;
 }
 
-/* SECTIONS */
-section{
-padding:70px 20px;
-}
-
-.container{
-max-width:1100px;
-margin:auto;
-}
-
-/* HERO */
-.hero{
-text-align:center;
+/* CART */
+.cart{
 background:white;
-border-radius:16px;
-padding:40px;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
-animation:fadeUp 1s ease;
+padding:20px;
+border-radius:12px;
+margin-top:30px;
 }
 
-@keyframes fadeUp{
-from{opacity:0; transform:translateY(40px);}
-to{opacity:1; transform:translateY(0);}
-}
-
-.hero h2{
-color:#a4161a;
+.cart-item{
 margin-bottom:10px;
-}
-
-/* BUTTON */
-.btn{
-display:inline-block;
-margin-top:20px;
-background:#d62828;
-color:white;
-padding:14px 26px;
-border-radius:10px;
-text-decoration:none;
-font-weight:bold;
-transition:.3s;
-}
-
-.btn:hover{
-transform:translateY(-3px);
-box-shadow:0 10px 25px rgba(214,40,40,0.4);
-}
-
-/* GRID */
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:24px;
-}
-
-/* CARD */
-.card{
-background:white;
-padding:28px;
-border-radius:16px;
-box-shadow:0 8px 25px rgba(0,0,0,0.08);
-transition:.4s;
-opacity:0;
-transform:translateY(40px);
-}
-
-.card.show{
-opacity:1;
-transform:translateY(0);
-}
-
-.card:hover{
-transform:translateY(-8px) scale(1.02);
-}
-
-.card h3{
-color:#d62828;
-margin-bottom:10px;
-}
-
-ul{
-margin-left:20px;
-line-height:2;
 }
 
 /* FORM */
-form{
-display:grid;
-gap:14px;
-}
-
 input,textarea{
-padding:14px;
-border-radius:10px;
+width:100%;
+padding:12px;
+margin:10px 0;
+border-radius:8px;
 border:1px solid #ccc;
 }
 
-iframe{
-width:100%;
-height:300px;
-border-radius:14px;
-border:0;
-}
-
-/* FOOTER */
-footer{
-background:#111;
-color:white;
-text-align:center;
-padding:30px;
-}
-
-/* FLOAT BUTTONS */
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
+/* ORDER BUTTON */
+.order-btn{
 background:#25D366;
 color:white;
-padding:16px;
-border-radius:50%;
-font-size:22px;
-text-decoration:none;
-animation:pulse 2s infinite;
-}
-
-@keyframes pulse{
-0%{box-shadow:0 0 0 0 rgba(37,211,102,0.6);}
-70%{box-shadow:0 0 0 15px rgba(37,211,102,0);}
-100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}
-}
-
-/* MOBILE */
-@media(max-width:700px){
-
-.menu{
-display:none;
-flex-direction:column;
-background:#111;
+padding:14px;
+border:none;
+border-radius:10px;
 width:100%;
-padding:15px;
+font-size:16px;
+cursor:pointer;
 }
 
-.menu.show{
-display:flex;
-}
-
-.hamburger{
-display:block;
-}
-
-.header-right{
-position:static;
-text-align:center;
-margin-top:10px;
-}
-
+footer{
+background:#111;color:white;text-align:center;padding:20px;
+margin-top:30px;
 }
 </style>
 </head>
@@ -274,93 +108,65 @@ margin-top:10px;
 
 <header>
 <h1>SRI SURYADURGA GENERAL STORES</h1>
-<p>All Fancy & General Items Available</p>
-
-<div class="header-right">
-📞 +91 99853 85382<br>
-📞 +91 99635 66838
-</div>
+<p>Fancy • Gifts • Daily Essentials</p>
 </header>
 
 <nav>
-<div class="nav-container">
-<div class="logo">Suryadurga</div>
-<div class="hamburger" onclick="toggleMenu()">
-<i class="fa fa-bars"></i>
-</div>
-<div class="menu" id="menu">
-<a href="#home">Home</a>
-<a href="#about">About</a>
 <a href="#products">Products</a>
-<a href="#contact">Contact</a>
-</div>
-</div>
+<a href="#order">Order</a>
 </nav>
 
-<section id="home">
-<div class="container hero">
-<h2>Your One-Stop Fancy Store</h2>
-<p>Quality • Variety • Best Prices</p>
-<a href="#contact" class="btn">Visit Our Shop</a>
-</div>
-</section>
-
-<section id="about">
-<div class="container grid">
-<div class="card">
-<h3>About Us</h3>
-Sri Suryadurga General Stores — trusted local shop for fancy items and essentials.
-</div>
-
-<div class="card">
-<h3>Owners</h3>
-Bangarraju<br>Venu Gopal
-</div>
-
-<div class="card">
-<h3>Special</h3>
-All fancy items available for festivals and daily needs.
-</div>
-</div>
-</section>
+<!-- PRODUCTS -->
 
 <section id="products">
-<div class="container grid">
-<div class="card">
-<h3>Products</h3>
-<ul>
-<li>Fancy Items</li>
-<li>Gift Articles</li>
-<li>Decorations</li>
-<li>Stationery</li>
-<li>Daily Essentials</li>
-</ul>
+<div class="container">
+<h2>Products</h2>
+
+<div class="products">
+
+<div class="product">
+<h3>Fancy Bangles</h3>
+<p>₹50</p>
+<input type="number" value="1" min="1" class="qty" id="q1">
+<button class="btn" onclick="add('Fancy Bangles',50,'q1')">Add</button>
 </div>
+
+<div class="product">
+<h3>Gift Articles</h3>
+<p>₹120</p>
+<input type="number" value="1" min="1" class="qty" id="q2">
+<button class="btn" onclick="add('Gift Articles',120,'q2')">Add</button>
+</div>
+
+<div class="product">
+<h3>Decor Items</h3>
+<p>₹90</p>
+<input type="number" value="1" min="1" class="qty" id="q3">
+<button class="btn" onclick="add('Decor Items',90,'q3')">Add</button>
+</div>
+
+</div>
+
 </div>
 </section>
 
-<section id="contact">
-<div class="container grid">
+<!-- ORDER -->
 
-<div class="card">
-<h3>Address</h3>
-Palakonda Road, Ungaradametta
-<iframe src="https://maps.google.com/maps?q=Palakonda%20Road&output=embed"></iframe>
-</div>
+<section id="order">
+<div class="container">
 
-<div class="card">
-<h3>Contact</h3>
-<p><b>Phone:</b> +91 99853 85382</p>
-<p><b>Phone:</b> +91 99635 66838</p>
+<h2>Your Order</h2>
 
-<form onsubmit="event.preventDefault();alert('Message Sent!');">
-<input placeholder="Name" required>
-<input placeholder="Phone" required>
-<textarea placeholder="Message"></textarea>
-<button class="btn">Send</button>
-</form>
+<div class="cart" id="cart"></div>
 
-</div>
+<h3>Customer Details</h3>
+
+<input type="text" id="name" placeholder="Your Name" required>
+<input type="tel" id="phone" placeholder="Phone Number" required>
+<textarea id="address" placeholder="Delivery Address" required></textarea>
+
+<button class="order-btn" onclick="placeOrder()">Place Order on WhatsApp</button>
+
 </div>
 </section>
 
@@ -368,28 +174,38 @@ Palakonda Road, Ungaradametta
 © 2026 Sri Suryadurga General Stores
 </footer>
 
-<a href="tel:+919985385382" class="btn" style="position:fixed;bottom:90px;right:20px;">Call</a>
-
-<a class="whatsapp" href="https://wa.me/919963566838" target="_blank">
-<i class="fa-brands fa-whatsapp"></i>
-</a>
-
 <script>
-/* mobile menu */
-function toggleMenu(){
-document.getElementById("menu").classList.toggle("show");
+let cart=[];
+
+function add(name,price,id){
+let qty=document.getElementById(id).value;
+cart.push({name,price,qty});
+render();
 }
 
-/* scroll reveal */
-const cards = document.querySelectorAll('.card');
-window.addEventListener('scroll', () => {
-cards.forEach(card => {
-const top = card.getBoundingClientRect().top;
-if(top < window.innerHeight - 80){
-card.classList.add('show');
+function render(){
+let html="";
+cart.forEach(item=>{
+html += `<div class="cart-item">
+${item.name} x ${item.qty} = ₹${item.price*item.qty}
+</div>`;
+});
+document.getElementById("cart").innerHTML=html;
 }
+
+function placeOrder(){
+let name=document.getElementById("name").value;
+let phone=document.getElementById("phone").value;
+let address=document.getElementById("address").value;
+
+let msg=`Order from Sri Suryadurga Stores%0A`;
+cart.forEach(i=>{
+msg += `${i.name} x ${i.qty}%0A`;
 });
-});
+msg += `%0AName: ${name}%0APhone: ${phone}%0AAddress: ${address}`;
+
+window.open(`https://wa.me/919985385382?text=${msg}`);
+}
 </script>
 
 </body>
